@@ -235,6 +235,9 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     ```
 
     You'll then see output similar to the following in the container log:
+ ```console
+    $ docker logs <container_id>
+    ```
 
     ```plaintext
     [INFO] --- spring-boot:3.3.4:run (default-cli) @ spring-boot-docker ---
