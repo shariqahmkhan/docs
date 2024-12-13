@@ -233,9 +233,14 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     ```console
     $ docker run -d -p 8080:8080 spring-helloworld
     ```
-
+   
+2. To view logs of container
+   ```console
+    $ docker run -d -p 8080:8080 spring-helloworld
+    ```
+   
     You'll then see output similar to the following in the container log:
-
+   
     ```plaintext
     [INFO] --- spring-boot:3.3.4:run (default-cli) @ spring-boot-docker ---
     [INFO] Attaching agents: []
@@ -256,7 +261,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
      ```
 
 
-2. Access your “Hello World” page through your web browser at [http://localhost:8080](http://localhost:8080), or via this curl command:
+1. Access your “Hello World” page through your web browser at [http://localhost:8080](http://localhost:8080), or via this curl command:
 
     ```console
     $ curl localhost:8080
