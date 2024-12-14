@@ -28,18 +28,21 @@ file exists.
 1. Start an Alpine container and create a new file in it.
 
     ```console
-    $ docker run --rm alpine touch greeting.txt
+    $ docker run alpine touch greeting.txt
     ```
-
+  Note! 
+  1. Alpine docker image exits immediately (working as designed), so if you try above command without --rm, you will see containers in exit state (docker ps -a).
+  2. You can pause this Alpine container by running shell inside it (docker run -it alpine sh) 
+  
     > [!TIP]
     > Any commands you specify after the image name (in this case, `alpine`)
     > are executed inside the container. In this case, the command `touch
-    > greeting.txt` puts a file named `greeting.txt` on the container's filesystem.
+    > greeting.txt` puts a file named `greeting.txt` on the container's filesystem  and the container stops.
 
 2. Run a new Alpine container and use the `stat` command to check whether the file exists.
    
    ```console
-   $ docker run --rm alpine stat greeting.txt
+   $ docker run alpine stat greeting.txt
    ```
 
    You should see output similar to the following that indicates the file does not exist in the new container.
