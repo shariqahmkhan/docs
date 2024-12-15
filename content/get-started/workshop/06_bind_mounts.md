@@ -269,9 +269,9 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 
    ```console
    $ docker run -dp 127.0.0.1:3000:3000 ^
-       -w /app --mount "type=bind,src=%cd%,target=/app" ^
-       node:18-alpine ^
-       sh -c "yarn install && yarn run dev"
+      -w /app --mount "type=bind,src=%cd%,target=/app" ^
+      node:lts-alpine ^
+      sh -c "yarn install && yarn run dev"
    ```
 
    The following is a breakdown of the command:
@@ -281,7 +281,7 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
      command will run from
    - `--mount "type=bind,src=%cd%,target=/app"` - bind mount the current
      directory from the host into the `/app` directory in the container
-   - `node:18-alpine` - the image to use. Note that this is the base image for
+   - `node:lts-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
    - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
      shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
