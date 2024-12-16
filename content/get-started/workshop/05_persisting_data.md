@@ -168,6 +168,19 @@ To start the todo app container with the volume mounted:
 
 You've now learned how to persist data.
 
+### Alternative method
+You can also use the -v flag to attach volumes in Docker instead of the more verbose --mount flag with 
+type=volume, src, and target. The -v flag provides a simpler syntax for volume mounting, where the source 
+volume and target directory inside the container are specified in a single string.  For example, instead of writing:
+
+```console
+docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started
+```
+you could write
+```console
+docker run -dp 127.0.0.1:3000:3000 -v todo-db:/etc/todos getting-started
+```
+
 ## Dive into the volume
 
 A lot of people frequently ask "Where is Docker storing my data when I use a volume?" If you want to know, 
